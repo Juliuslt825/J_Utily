@@ -1,926 +1,115 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>J Utilidades</title>
-
 <style>
-:root{
-  --primary:#111827;
-  --accent:#16a34a;
-  --bg:#f5f7fa;
-  --card:#fff;
-  --text:#172033;
-  --muted:#667085
-}
-
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text)
-}
-
-header{
-  background:linear-gradient(135deg,#111827,#263244);
-  color:#fff;
-  padding:28px 20px
-}
-
-.top{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px
-}
-
-.logo{
-  font-size:28px;
-  font-weight:800
-}
-
-.logo span{
-  color:#4ade80
-}
-
-.tag{
-  opacity:.8;
-  font-size:14px
-}
-
-main{
-  max-width:1100px;
-  margin:28px auto;
-  padding:0 20px
-}
-
-.controls{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:24px
-}
-
-input,select{
-  border:1px solid #d0d5dd;
-  border-radius:12px;
-  padding:13px 14px;
-  font-size:15px;
-  background:white
-}
-
-input{
-  flex:1;
-  min-width:220px
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:20px
-}
-
-.card{
-  background:var(--card);
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 6px 20px rgba(16,24,40,.08);
-  display:flex;
-  flex-direction:column
-}
-
-.card img{
-  width:100%;
-  height:210px;
-  object-fit:cover;
-  background:#eef2f6
-}
-
-.content{
-  padding:16px;
-  display:flex;
-  flex-direction:column;
-  flex:1
-}
-
-.category{
-  font-size:12px;
-  color:var(--accent);
-  font-weight:700;
-  text-transform:uppercase
-}
-
-h2{
-  font-size:18px;
-  margin:7px 0
-}
-
-.desc{
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.45;
-  flex:1
-}
-
-.price{
-  font-size:23px;
-  font-weight:800;
-  margin:14px 0
-}
-
-.buy{
-  display:block;
-  text-align:center;
-  background:var(--accent);
-  color:#fff;
-  text-decoration:none;
-  padding:12px;
-  border-radius:10px;
-  font-weight:700
-}
-
-.buy:hover{
-  filter:brightness(.93)
-}
-
-.empty{
-  text-align:center;
-  padding:50px;
-  color:var(--muted)
-}
-
-footer{
-  text-align:center;
-  color:#667085;
-  padding:40px 20px
-}
-
-@media(max-width:600px){
-
-  .top{
-    align-items:flex-start;
-    flex-direction:column
-  }
-
-  .grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px
-  }
-
-  .card img{
-    height:160px
-  }
-
-  .content{
-    padding:12px
-  }
-
-  h2{
-    font-size:16px
-  }
-
-  .price{
-    font-size:19px
-  }
-}
-
-@media(max-width:380px){
-
-  .grid{
-    grid-template-columns:1fr
-  }
-}
+:root{--primary:#111827;--accent:#16a34a;--bg:#f5f7fa;--card:#fff;--text:#172033;--muted:#667085}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,#111827,#263244);color:#fff;padding:28px 20px}
+.top{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:28px;font-weight:800}.logo span{color:#4ade80}
+.tag{opacity:.8;font-size:14px}
+main{max-width:1100px;margin:28px auto;padding:0 20px}
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+input,select{border:1px solid #d0d5dd;border-radius:12px;padding:13px 14px;font-size:15px;background:white}
+input{flex:1;min-width:220px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.card{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(16,24,40,.08);display:flex;flex-direction:column}
+.card img{width:100%;height:210px;object-fit:cover;background:#eef2f6}
+.content{padding:16px;display:flex;flex-direction:column;flex:1}
+.category{font-size:12px;color:var(--accent);font-weight:700;text-transform:uppercase}
+h2{font-size:18px;margin:7px 0}.desc{color:var(--muted);font-size:14px;line-height:1.45;flex:1}
+.price{font-size:23px;font-weight:800;margin:14px 0}
+.buy{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;padding:12px;border-radius:10px;font-weight:700}
+.buy:hover{filter:brightness(.93)}
+.empty{text-align:center;padding:50px;color:var(--muted)}
+footer{text-align:center;color:#667085;padding:40px 20px}
+@media(max-width:600px){.top{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card img{height:160px}.content{padding:12px}h2{font-size:16px}.price{font-size:19px}}
+@media(max-width:380px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
-
 <body>
-
 <header>
-
   <div class="top">
-
     <div>
-
-      <div class="logo">
-        J <span>Utilidades</span>
-      </div>
-
-      <div class="tag">
-        Produtos úteis para o seu dia a dia
-      </div>
-
+      <div class="logo">J <span>Utilidades</span></div>
+      <div class="tag">Produtos úteis para o seu dia a dia</div>
     </div>
-
   </div>
-
 </header>
 
-
 <main>
-
   <div class="controls">
-
-    <input
-      id="search"
-      type="search"
-      placeholder="🔎 Procurar produto..."
-    >
-
-    <select id="category">
-
-      <option value="all">
-        Todas as categorias
-      </option>
-
-    </select>
-
+    <input id="search" type="search" placeholder="🔎 Procurar produto...">
+    <select id="category"><option value="all">Todas as categorias</option></select>
   </div>
-
-
   <section id="products" class="grid"></section>
-
-  <div id="empty" class="empty" hidden>
-    Nenhum produto encontrado.
-  </div>
-
+  <div id="empty" class="empty" hidden>Nenhum produto encontrado.</div>
 </main>
 
-
-<footer>
-  © 2026 J Utilidades — Fale conosco pelo WhatsApp
-</footer>
-
+<footer>© 2026 J Utilidades — Fale conosco pelo WhatsApp</footer>
 
 <script>
-
 /*
-=========================================================
-CONFIGURAÇÃO
-=========================================================
-
-SEU WHATSAPP:
-
+  EDITE AQUI:
+  1) Troque WHATSAPP pelo número da sua loja, com código do país.
+     Exemplo: 5521999999999
+  2) Adicione seus produtos dentro da lista abaixo.
 */
-
 const WHATSAPP = "5521990067062";
 
-
-/*
-=========================================================
-PRODUTOS
-=========================================================
-
-PARA ADICIONAR UM PRODUTO:
-
-1. COPIE UM BLOCO
-2. MUDE NOME
-3. MUDE DESCRIÇÃO
-4. MUDE PREÇO
-5. MUDE CATEGORIA
-6. MUDE A FOTO
-
-EXEMPLO:
-
-{
-  name: "Produto novo",
-  description: "Descrição do produto",
-  price: 100,
-  category: "ELETRÔNICOS",
-  image: "images/produto.jpg"
-},
-
-=========================================================
-*/
-
-
 const products = [
-
-
-/* =====================================================
-   DESTAQUES
-===================================================== */
-
-{
-  name: "IPHONE 16 Black",
-  description: "Saúde da bateria em 92%. Chame para mais informações.",
-  price: 3500,
-  category: "DESTAQUES",
-  image: "images/images.jpg"
-},
-
-{
-  name: "Stanley Quencher",
-  description: "Copo térmico Stanley. Consulte cores disponíveis.",
-  price: 359,
-  category: "DESTAQUES",
-  image: "images/stanley.jpg"
-},
-
-{
-  name: "Fone Bluetooth",
-  description: "Fone sem fio para música e chamadas.",
-  price: 59.90,
-  category: "DESTAQUES",
-  image: "images/fone.jpg"
-},
-
-
-/* =====================================================
-   CELULARES
-===================================================== */
-
-{
-  name: "IPHONE 16",
-  description: "Celular Apple. Consulte armazenamento e cores disponíveis.",
-  price: 3500,
-  category: "CELULARES",
-  image: "images/iphone16.jpg"
-},
-
-{
-  name: "IPHONE 15",
-  description: "Celular Apple. Consulte armazenamento e condições.",
-  price: 3000,
-  category: "CELULARES",
-  image: "images/iphone15.jpg"
-},
-
-{
-  name: "IPHONE 14",
-  description: "Celular Apple. Consulte armazenamento e condições.",
-  price: 2500,
-  category: "CELULARES",
-  image: "images/iphone14.jpg"
-},
-
-{
-  name: "IPHONE 13",
-  description: "Celular Apple. Consulte armazenamento e condições.",
-  price: 2200,
-  category: "CELULARES",
-  image: "images/iphone13.jpg"
-},
-
-{
-  name: "IPHONE 12",
-  description: "Celular Apple. Consulte armazenamento e condições.",
-  price: 1800,
-  category: "CELULARES",
-  image: "images/iphone12.jpg"
-},
-
-{
-  name: "IPHONE 11",
-  description: "Saúde da bateria em 100%. Consultar cores disponíveis.",
-  price: 900,
-  category: "CELULARES",
-  image: "images/iphone.png"
-},
-
-{
-  name: "Samsung Galaxy S24",
-  description: "Smartphone Samsung. Consulte armazenamento.",
-  price: 3000,
-  category: "CELULARES",
-  image: "images/s24.jpg"
-},
-
-{
-  name: "Samsung Galaxy S23",
-  description: "Smartphone Samsung Galaxy.",
-  price: 2400,
-  category: "CELULARES",
-  image: "images/s23.jpg"
-},
-
-{
-  name: "Samsung Galaxy A55",
-  description: "Smartphone Samsung intermediário.",
-  price: 1800,
-  category: "CELULARES",
-  image: "images/a55.jpg"
-},
-
-{
-  name: "Samsung Galaxy A35",
-  description: "Smartphone Samsung.",
-  price: 1500,
-  category: "CELULARES",
-  image: "images/a35.jpg"
-},
-
-{
-  name: "Redmi Note",
-  description: "Smartphone Xiaomi. Consulte modelo e armazenamento.",
-  price: 1500,
-  category: "CELULARES",
-  image: "images/redmi.jpg"
-},
-
-
-/* =====================================================
-   STANLEY - COPOS E GARRAFAS
-===================================================== */
-
-{
-  name: "Stanley Quencher 1,18L",
-  description: "Copo térmico com alça, tampa e canudo.",
-  price: 359,
-  category: "STANLEY",
-  image: "images/stanley.jpg"
-},
-
-{
-  name: "Stanley Quencher 887ml",
-  description: "Copo térmico Stanley com canudo.",
-  price: 319,
-  category: "STANLEY",
-  image: "images/stanley887.jpg"
-},
-
-{
-  name: "Stanley Quencher Black",
-  description: "Copo térmico Stanley na cor preta.",
-  price: 359,
-  category: "STANLEY",
-  image: "images/stanleyblack.jpg"
-},
-
-{
-  name: "Stanley Quencher Cream",
-  description: "Copo térmico Stanley na cor creme.",
-  price: 359,
-  category: "STANLEY",
-  image: "images/stanleycream.jpg"
-},
-
-{
-  name: "Garrafa Stanley 710ml",
-  description: "Garrafa térmica Stanley para o dia a dia.",
-  price: 309,
-  category: "STANLEY",
-  image: "images/garrafastanley.jpg"
-},
-
-{
-  name: "Garrafa Stanley Aerolight",
-  description: "Garrafa térmica leve e prática.",
-  price: 259,
-  category: "STANLEY",
-  image: "images/aerolight.jpg"
-},
-
-{
-  name: "Stanley Beer Tumbler",
-  description: "Copo térmico para bebidas.",
-  price: 179,
-  category: "STANLEY",
-  image: "images/beer.jpg"
-},
-
-
-/* =====================================================
-   ACESSÓRIOS
-===================================================== */
-
-{
-  name: "Capinha para iPhone",
-  description: "Capinha protetora. Consulte o modelo.",
-  price: 29.90,
-  category: "ACESSÓRIOS",
-  image: "images/capinha.jpg"
-},
-
-{
-  name: "Capinha Anti-impacto",
-  description: "Proteção contra impactos.",
-  price: 29.90,
-  category: "ACESSÓRIOS",
-  image: "images/capinha2.jpg"
-},
-
-{
-  name: "Película de Vidro",
-  description: "Película protetora para celular.",
-  price: 19.90,
-  category: "ACESSÓRIOS",
-  image: "images/pelicula.jpg"
-},
-
-{
-  name: "Cabo USB-C",
-  description: "Cabo USB-C para carregamento.",
-  price: 29.90,
-  category: "ACESSÓRIOS",
-  image: "images/cabo.jpg"
-},
-
-{
-  name: "Carregador Turbo",
-  description: "Carregador rápido para celular.",
-  price: 49.90,
-  category: "ACESSÓRIOS",
-  image: "images/carregador.jpg"
-},
-
-{
-  name: "Suporte Veicular",
-  description: "Suporte para celular no carro.",
-  price: 39.90,
-  category: "ACESSÓRIOS",
-  image: "images/suporte.jpg"
-},
-
-{
-  name: "Suporte de Mesa",
-  description: "Suporte para celular ou tablet.",
-  price: 34.90,
-  category: "ACESSÓRIOS",
-  image: "images/suportemesa.jpg"
-},
-
-
-/* =====================================================
-   ELETRÔNICOS
-===================================================== */
-
-{
-  name: "Fone Bluetooth",
-  description: "Fone sem fio para música e chamadas.",
-  price: 59.90,
-  category: "ELETRÔNICOS",
-  image: "images/fone.jpg"
-},
-
-{
-  name: "Fone Bluetooth M10",
-  description: "Fone sem fio compacto.",
-  price: 39.90,
-  category: "ELETRÔNICOS",
-  image: "images/m10.jpg"
-},
-
-{
-  name: "Caixa de Som Bluetooth",
-  description: "Caixa de som portátil.",
-  price: 99.90,
-  category: "ELETRÔNICOS",
-  image: "images/caixa.jpg"
-},
-
-{
-  name: "Smartwatch",
-  description: "Relógio inteligente para uso diário.",
-  price: 129.90,
-  category: "ELETRÔNICOS",
-  image: "images/smartwatch.jpg"
-},
-
-{
-  name: "Power Bank",
-  description: "Bateria portátil para celular.",
-  price: 89.90,
-  category: "ELETRÔNICOS",
-  image: "images/powerbank.jpg"
-},
-
-{
-  name: "Luz LED USB",
-  description: "Luz LED compacta para diversos usos.",
-  price: 24.90,
-  category: "ELETRÔNICOS",
-  image: "images/led.jpg"
-},
-
-
-/* =====================================================
-   CASA
-===================================================== */
-
-{
-  name: "Ventilador",
-  description: "Ventilador para casa ou escritório.",
-  price: 149.90,
-  category: "CASA",
-  image: "images/ventilador.jpg"
-},
-
-{
-  name: "Luminária LED",
-  description: "Luminária para mesa e quarto.",
-  price: 79.90,
-  category: "CASA",
-  image: "images/luminaria.jpg"
-},
-
-{
-  name: "Organizador Multiuso",
-  description: "Organizador para casa.",
-  price: 39.90,
-  category: "CASA",
-  image: "images/organizador.jpg"
-},
-
-{
-  name: "Garrafa de Água",
-  description: "Garrafa para uso diário.",
-  price: 49.90,
-  category: "CASA",
-  image: "images/garrafa.jpg"
-},
-
-{
-  name: "Kit Organizadores",
-  description: "Kit para organização da casa.",
-  price: 59.90,
-  category: "CASA",
-  image: "images/kit.jpg"
-},
-
-
-/* =====================================================
-   ROUPAS
-===================================================== */
-
-{
-  name: "Salto alto",
-  description: "Tam 39/40. 10cm de altura.",
-  price: 80,
-  category: "ROUPAS",
-  image: "images/salto.jpeg"
-},
-
-{
-  name: "Salto alto Premium",
-  description: "Tam 39/40. 10cm de altura.",
-  price: 100,
-  category: "ROUPAS",
-  image: "images/saltop.jpeg"
-},
-
-{
-  name: "Tênis Casual",
-  description: "Tênis confortável para o dia a dia.",
-  price: 129.90,
-  category: "ROUPAS",
-  image: "images/tenis.jpg"
-},
-
-{
-  name: "Camiseta Masculina",
-  description: "Camiseta básica. Consulte tamanhos.",
-  price: 49.90,
-  category: "ROUPAS",
-  image: "images/camiseta.jpg"
-},
-
-
-/* =====================================================
-   SOM
-===================================================== */
-
-{
-  name: "SOM MHC-GTR6H",
-  description: "800W de potência limpa. Sistema Bass Reflex.",
-  price: 550,
-  category: "SOM",
-  image: "images/som.jpg"
-},
-
-{
-  name: "Caixa de Som Portátil",
-  description: "Som potente e portátil.",
-  price: 199.90,
-  category: "SOM",
-  image: "images/caixagrande.jpg"
-},
-
-{
-  name: "Soundbar",
-  description: "Sistema de som para TV.",
-  price: 299.90,
-  category: "SOM",
-  image: "images/soundbar.jpg"
-},
-
-
-/* =====================================================
-   VEÍCULOS
-===================================================== */
-
-{
-  name: "XTZ CROSSER 150, 2020",
-  description: "REVISADA, DOC.OK! TRANSFERÊNCIA NO ATO DA COMPRA.",
-  price: 15000,
-  category: "VEÍCULOS",
-  image: "images/crosser.jpeg"
-},
-
-{
-  name: "FAN 125, 2016/17",
-  description: "REVISADA, DOC.OK! TRANSFERÊNCIA NO ATO DA COMPRA.",
-  price: 8000,
-  category: "VEÍCULOS",
-  image: "images/fan.jpeg"
-},
-
-{
-  name: "Corsa 2008",
-  description: "Nada a fazer. Apenas algumas multas, fora isso carro está filé.",
-  price: 12000,
-  category: "VEÍCULOS",
-  image: "images/corsa.jpeg"
-},
-
-{
-  name: "Moto 125",
-  description: "Moto usada. Consulte documentação e condições.",
-  price: 7500,
-  category: "VEÍCULOS",
-  image: "images/moto.jpg"
-}
-
-];
-
-
-/* =====================================================
-   SISTEMA DO SITE
-===================================================== */
-
-const money = n => n.toLocaleString(
-  "pt-BR",
   {
-    style:"currency",
-    currency:"BRL"
-  }
-);
-
-
-function render(){
-
-  const q =
-    document
-    .querySelector("#search")
-    .value
-    .toLowerCase()
-    .trim();
-
-  const cat =
-    document
-    .querySelector("#category")
-    .value;
-
-
-  const list = products.filter(p =>
-
-    (cat==="all" || p.category===cat)
-
-    &&
-
-    (
-      `${p.name} ${p.description} ${p.category}`
-      .toLowerCase()
-      .includes(q)
-    )
-
-  );
-
-
-  const box =
-    document.querySelector("#products");
-
-  const empty =
-    document.querySelector("#empty");
-
-
-  box.innerHTML="";
-
-  empty.hidden =
-    list.length > 0;
-
-
-  list.forEach(p => {
-
-    const msg =
-      encodeURIComponent(
-        `Olá! Tenho interesse no produto "${p.name}" no valor de ${money(p.price)}.`
-      );
-
-
-    box.insertAdjacentHTML(
-      "beforeend",
-
-      `
-
-      <article class="card">
-
-        <img
-          src="${p.image}"
-          alt="${p.name}"
-          loading="lazy"
-        >
-
-        <div class="content">
-
-          <div class="category">
-            ${p.category}
-          </div>
-
-          <h2>
-            ${p.name}
-          </h2>
-
-          <div class="desc">
-            ${p.description}
-          </div>
-
-          <div class="price">
-            ${money(p.price)}
-          </div>
-
-          <a
-            class="buy"
-            target="_blank"
-            rel="noopener"
-            href="https://wa.me/${WHATSAPP}?text=${msg}"
-          >
-            Comprar pelo WhatsApp
-          </a>
-
-        </div>
-
-      </article>
-
-      `
-    );
-
-  });
-
-}
-
-
-/* =====================================================
-   CRIA AS CATEGORIAS AUTOMATICAMENTE
-===================================================== */
-
-const cats =
-  [
-    ...new Set(
-      products.map(p => p.category)
-    )
+    name: "JULINHO",
+    description: "Coloque aqui uma descrição detalhada do seu produto.",
+    price: 29.90,
+    category: "Destaques",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    name: "Ellenzinha",
+    description: "Minha gatona",
+    price: 29.90,
+    category: "Destaques",
+    image: "images/image.jpeg"
+  },
   ];
 
+const money = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 
-cats.forEach(c => {
-
-  document
-  .querySelector("#category")
-  .insertAdjacentHTML(
-    "beforeend",
-    `<option value="${c}">${c}</option>`
+function render(){
+  const q = document.querySelector("#search").value.toLowerCase().trim();
+  const cat = document.querySelector("#category").value;
+  const list = products.filter(p =>
+    (cat==="all" || p.category===cat) &&
+    (`${p.name} ${p.description}`.toLowerCase().includes(q))
   );
+  const box=document.querySelector("#products"), empty=document.querySelector("#empty");
+  box.innerHTML="";
+  empty.hidden=list.length>0;
+  list.forEach(p=>{
+    const msg=encodeURIComponent(`Olá! Tenho interesse no produto "${p.name}" no valor de ${money(p.price)}.`);
+    box.insertAdjacentHTML("beforeend",`
+      <article class="card">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        <div class="content">
+          <div class="category">${p.category}</div>
+          <h2>${p.name}</h2>
+          <div class="desc">${p.description}</div>
+          <div class="price">${money(p.price)}</div>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${msg}">Comprar pelo WhatsApp</a>
+        </div>
+      </article>`);
+  });
+}
 
-});
-
-
-/* =====================================================
-   PESQUISA
-===================================================== */
-
-document
-.querySelector("#search")
-.addEventListener(
-  "input",
-  render
-);
-
-
-/* =====================================================
-   FILTRO DE CATEGORIA
-===================================================== */
-
-document
-.querySelector("#category")
-.addEventListener(
-  "change",
-  render
-);
-
-
-/* =====================================================
-   INICIA O SITE
-===================================================== */
-
+const cats=[...new Set(products.map(p=>p.category))];
+cats.forEach(c=>document.querySelector("#category").insertAdjacentHTML("beforeend",`<option>${c}</option>`));
+document.querySelector("#search").addEventListener("input",render);
+document.querySelector("#category").addEventListener("change",render);
 render();
-
 </script>
-
 </body>
 </html>
-```

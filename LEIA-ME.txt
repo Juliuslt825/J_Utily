@@ -1,0 +1,25 @@
+J UTILIDADES - LOJA
+
+Como usar:
+1. Abra index.html no navegador.
+2. No código, procure por:
+   const WHATSAPP = "5521999999999";
+   Troque pelo número do seu WhatsApp com 55 + DDD + número.
+3. Na lista "products", substitua os produtos de exemplo pelos seus.
+4. Para cada produto informe:
+   name       = nome
+   description= descrição
+   price      = preço
+   category   = categoria
+   image      = link da imagem
+
+Exemplo:
+{
+  name: "Air Fryer",
+  description: "Air Fryer 5 litros...",
+  price: 299.90,
+  category: "Casa",
+  image: "LINK_DA_IMAGEM"
+}
+
+O botão de compra abre o WhatsApp com uma mensagem já preenchida.
